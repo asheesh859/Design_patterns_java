@@ -28,25 +28,18 @@ class Samosa{
 }
 
 public class Singleton {
-	
-	
-
-	public static void main(String[] args) throws Exception {
-		
+	public static void main(String[] args) throws Exception {		
 		Samosa s1 = Samosa.getSamosa();	
-		Samosa s2 = Samosa.getSamosa();
-		
+		Samosa s2 = Samosa.getSamosa();		
 		System.out.println(s1.hashCode());
-		System.out.println(s2.hashCode());
-		
+		System.out.println(s2.hashCode());	
 		
 		//Break the singleton using reflection
+		
 		Constructor<Samosa> constructor = Samosa.class.getDeclaredConstructor();
 		constructor.setAccessible(true);
 		Samosa s3 = constructor.newInstance();
-		System.out.println(s3.hashCode());
-		
-		
+		System.out.println(s3.hashCode());		
 	}
 
 }
